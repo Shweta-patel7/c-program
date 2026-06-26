@@ -1,13 +1,12 @@
 #include <stdio.h>
 
 /**
- * @brief Prints an array in forward and reverse order.
+ * Prints an array in forward and reverse order.
  *
  * The program initializes an array of nine integers, displays
  * its contents from the first element to the last, and then
  * displays the contents in reverse order.
  *
- * @return 0 on successful execution.
  */
 int main(void)
 {
