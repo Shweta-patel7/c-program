@@ -1,0 +1,25 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../02_Data type"
+		},
+		{
+			"path": "../03_Variable"
+		},
+		{
+			"path": "../04_Operators"
+		},
+		{
+			"path": "../05_Constructs"
+		},
+		{
+			"path": "../06_Loops"
+		},
+		{
+			"path": "../07_Special Programs"
+		}
+	]
+}
