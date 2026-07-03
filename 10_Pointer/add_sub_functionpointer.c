@@ -9,6 +9,11 @@ int sub (int a, int b)
     return a - b;
 }
 
+int mul (int a, int b)
+{
+    return a * b;
+}
+
 int main()
 {
     int x, y, choice;
@@ -18,6 +23,7 @@ int main()
 
     printf("\n1. Add\n");
     printf("2. Subtract\n");
+    printf("3. multiply \n");
     printf("Enter your choice: ");
     scanf("%d", &choice);
 
@@ -31,6 +37,10 @@ int main()
         op = sub;
     }
 
+    else if (choice == 3)
+    {
+        op = mul;
+    }
     
     else
     {
@@ -41,7 +51,4 @@ int main()
     printf("Result = %d\n", op(x, y));
 
     return 0;
-
-    
-
 }
