@@ -1,11 +1,29 @@
+/**
+ * @file datatype_size_pointer.c
+ * @brief Demonstrates size of different data types using pointers.
+ *
+ * This program uses pointers to variables of different data types and
+ * prints the memory size of the values they point to using sizeof().
+ */
+
 #include <stdio.h>
 
-int main() {
+/**
+ * @brief Main function of the program.
+ *
+ * Declares variables of different data types, assigns pointers to them,
+ * and prints the size of each data type using dereferenced pointers.
+ *
+ * @return 0 on successful execution
+ */
+int main()
+{
     int i;
     char c;
     float f;
     double d;
 
+    /** Pointer declarations */
     int *ip = &i;
     char *cp = &c;
     float *fp = &f;

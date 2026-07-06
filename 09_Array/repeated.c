@@ -1,10 +1,9 @@
 /**
- * @file repeated_digits.c
- * @brief Program to detect repeated digits in a number.
+ * @file digit_repetition_check.c
+ * @brief Checks whether a number has repeated digits.
  *
- * This program checks whether any digit in the given number
- * appears more than once. It prints "yes" if a repeated digit
- * is found, otherwise prints "no".
+ * This program checks if any digit in the given number appears more
+ * than once using an auxiliary array to track seen digits.
  */
 
 #include <stdio.h>
@@ -12,41 +11,46 @@
 /**
  * @brief Main function of the program.
  *
- * Reads an integer from the user and checks whether any digit
- * is repeated using an auxiliary array to track seen digits.
+ * Reads an integer, checks each digit from right to left, and
+ * determines whether any digit repeats.
  *
- * @return int Returns 0 on successful execution.
+ * @return 0 on successful execution
  */
 int main()
 {
-    int seen[10] = {0};
+    int seen[10] = {0};   /**< Array to track digits 0-9 */
     int n;
+    int rem;
 
     printf("Enter a number: ");
     scanf("%d", &n);
 
-    int rem;
-
+    /**
+     * @brief Check for repeated digits
+     */
     while (n > 0)
     {
         rem = n % 10;
 
         if (seen[rem] == 1)
         {
-            break;
+            break;   // duplicate digit found
         }
 
         seen[rem] = 1;
         n = n / 10;
     }
 
+    /**
+     * @brief Output result
+     */
     if (n > 0)
     {
-        printf("yes\n");  // repeated digit found
+        printf("Yes (repeated digit found)\n");
     }
     else
     {
-        printf("no\n");   // all digits are unique
+        printf("No (all digits are unique)\n");
     }
 
     return 0;

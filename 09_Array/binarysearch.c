@@ -1,5 +1,21 @@
+/**
+ * @file binary_search.c
+ * @brief Implements binary search on a sorted array.
+ *
+ * This program searches for an element in a sorted integer array
+ * using the binary search algorithm and reports its index if found.
+ */
+
 #include <stdio.h>
 
+/**
+ * @brief Main function of the program.
+ *
+ * Reads a sorted array from the user, takes a search element,
+ * and performs binary search to find its position.
+ *
+ * @return 0 on successful execution
+ */
 int main()
 {
     int n, i, f, low, high, mid, found = 0;
@@ -21,6 +37,9 @@ int main()
     low = 0;
     high = n - 1;
 
+    /**
+     * @brief Binary search logic
+     */
     while (low <= high)
     {
         mid = (low + high) / 2;

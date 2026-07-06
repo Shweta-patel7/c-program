@@ -1,18 +1,48 @@
+/**
+ * @file bubble_sort_function_pointer.c
+ * @brief Bubble sort implementation using function pointers.
+ *
+ * This program sorts an array in ascending or descending order
+ * based on user choice. The comparison logic is passed as a
+ * function pointer, making the sorting function reusable.
+ */
+
 #include <stdio.h>
 
-// Comparison function for ascending order
+/**
+ * @brief Comparison function for ascending order.
+ *
+ * @param a First element
+ * @param b Second element
+ * @return 1 if a > b (swap needed), otherwise 0
+ */
 int ascending(int a, int b)
 {
     return a > b;
 }
 
-// Comparison function for descending order
+/**
+ * @brief Comparison function for descending order.
+ *
+ * @param a First element
+ * @param b Second element
+ * @return 1 if a < b (swap needed), otherwise 0
+ */
 int descending(int a, int b)
 {
     return a < b;
 }
 
-// Bubble sort using function pointer
+/**
+ * @brief Bubble sort function using function pointer.
+ *
+ * This function sorts the array based on the comparison logic
+ * provided by the function pointer.
+ *
+ * @param arr Array to be sorted
+ * @param n Number of elements in the array
+ * @param compare Function pointer used for comparison
+ */
 void sort(int arr[], int n, int (*compare)(int, int))
 {
     int i, j, temp;
@@ -31,6 +61,14 @@ void sort(int arr[], int n, int (*compare)(int, int))
     }
 }
 
+/**
+ * @brief Main function of the program.
+ *
+ * Takes input array from the user, asks sorting order,
+ * and sorts the array using function pointers.
+ *
+ * @return 0 on successful execution
+ */
 int main()
 {
     int arr[10], n, i, choice;
@@ -69,6 +107,8 @@ int main()
     {
         printf("%d ", arr[i]);
     }
+
+    printf("\n");
 
     return 0;
 }

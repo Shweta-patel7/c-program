@@ -1,24 +1,45 @@
+/**
+ * @file symmetric_matrix.c
+ * @brief Checks whether a matrix is symmetric.
+ *
+ * This program reads a square matrix, computes its transpose,
+ * and checks whether the matrix is equal to its transpose.
+ * If yes, the matrix is symmetric.
+ */
+
 #include <stdio.h>
 
+/**
+ * @brief Main function of the program.
+ *
+ * Reads a matrix, computes its transpose, displays both matrices,
+ * and checks whether the matrix is symmetric.
+ *
+ * @return 0 on successful execution
+ */
 int main()
 {
-    int r, c, i, j, count = 1;
+    int r, c, i, j;
+    int count = 1;
 
     printf("Enter number of rows and columns: ");
     scanf("%d %d", &r, &c);
 
-    // A symmetric matrix must be square
+    /** Symmetric matrix must be square */
     if (r != c)
     {
         printf("Matrix is not symmetric.\n");
         return 0;
     }
 
+    /** Original matrix and transpose matrix */
     int a[r][c], t[c][r];
 
     printf("Enter matrix elements:\n");
 
-    // Input matrix
+    /**
+     * @brief Input matrix elements
+     */
     for (i = 0; i < r; i++)
     {
         for (j = 0; j < c; j++)
@@ -27,7 +48,9 @@ int main()
         }
     }
 
-    // Find transpose
+    /**
+     * @brief Compute transpose of matrix
+     */
     for (i = 0; i < r; i++)
     {
         for (j = 0; j < c; j++)
@@ -36,8 +59,11 @@ int main()
         }
     }
 
-    // Print original matrix
     printf("\nOriginal Matrix:\n");
+
+    /**
+     * @brief Display original matrix
+     */
     for (i = 0; i < r; i++)
     {
         for (j = 0; j < c; j++)
@@ -47,8 +73,11 @@ int main()
         printf("\n");
     }
 
-    // Print transpose matrix
     printf("\nTranspose Matrix:\n");
+
+    /**
+     * @brief Display transpose matrix
+     */
     for (i = 0; i < c; i++)
     {
         for (j = 0; j < r; j++)
@@ -58,7 +87,11 @@ int main()
         printf("\n");
     }
 
-    // Check symmetry
+    /**
+     * @brief Check symmetry condition
+     *
+     * A matrix is symmetric if A[i][j] == A[j][i]
+     */
     for (i = 0; i < r; i++)
     {
         for (j = 0; j < c; j++)
