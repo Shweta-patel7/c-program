@@ -18,14 +18,10 @@
  *
  * @return 0 on successful execution.
  */
-int main()
+void wordcase(char *s1)
 {
     int i;
-    char s1[100];
-
-    printf("Enter string: ");
-    gets(s1);
-
+ 
     /** Convert uppercase letters to lowercase */
     for (i = 0; s1[i] != '\0'; i++)
     {
@@ -50,4 +46,14 @@ int main()
     printf("Lowercase to uppercase: %s\n", s1);
 
     return 0;
+}
+
+int main()
+{
+    char s[100];
+
+    printf("Enter string: ");
+    gets(s);
+
+    wordcase(s);
 }

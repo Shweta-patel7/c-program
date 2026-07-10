@@ -17,7 +17,7 @@
  *
  * @return 0 on successful execution.
  */
-int main()
+int length(char name[])
 {
     /** Variable to store the character count. */
     int coun = 0;
@@ -26,10 +26,6 @@ int main()
     int i;
 
     /** Character array to store the input string. */
-    char name[40];
-
-    printf("Enter string : ");
-    gets(name);
 
     /**
      * @brief Count the number of characters in the string.
@@ -39,10 +35,20 @@ int main()
         coun++;
     }
 
-    /**
-     * @brief Display the length of the string.
-     */
-    printf("Number of characters = %d\n", coun);
+    return coun;
+}
+
+int main()
+{
+    char name[40];
+    int l;
+
+    printf("Enter string : ");
+    gets(name);
+
+    l = length(name);
+    printf("number of characters in a string = %d\n", l);
 
     return 0;
+
 }

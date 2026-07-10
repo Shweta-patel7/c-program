@@ -18,31 +18,36 @@
  *
  * @return 0 on successful execution.
  */
-int main()
+void copystring(char s1[], char s2[])
 {
     /** Character arrays for the original and copied strings. */
-    char name[40], copy[40];
+    
 
     /** Loop counter. */
     int i;
-
-    printf("Enter string : ");
-    gets(name);
 
     /**
      * @brief Copy each character from the source string
      * to the destination string.
      */
-    for (i = 0; name[i] != '\0'; i++)
+    for (i = 0; s1[i] != '\0'; i++)
     {
-        copy[i] = name[i];
+        s2[i] = s1[i];
     }
 
     /** Add the null terminator to complete the copied string. */
-    copy[i] = '\0';
+    s2[i] = '\0';
 
-    /** Display the copied string. */
-    printf("Copy of string : %s", copy);
+}
 
-    return 0;
+int main()
+{
+    char name[100], copy[100];
+    printf("Enter string : ");
+    gets(name);
+
+    copystring(name, copy);
+
+    printf("copied string %s\n", copy);
+    
 }

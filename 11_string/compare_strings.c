@@ -18,22 +18,13 @@
  *
  * @return None.
  */
-void main()
+void compare(char s1[], char s2[])
 {
     /** Flag to indicate whether the strings are different. */
     int flag = 0;
 
     /** Loop counter used for string traversal. */
     int i = 0;
-
-    /** Arrays to store the input strings. */
-    char s1[100], s2[100];
-
-    printf("Enter string 1: ");
-    gets(s1);
-
-    printf("Enter string 2: ");
-    gets(s2);
 
     /**
      * @brief Compare both strings character by character.
@@ -59,4 +50,18 @@ void main()
     {
         printf("String is same\n");
     }
+}
+
+void main()
+{
+    char str1[100], str2[100];
+
+    printf("enter string 1");
+    gets(str1);
+    printf("enter string 2");
+    gets(str2);
+
+    compare(str1, str2);
+
+
 }

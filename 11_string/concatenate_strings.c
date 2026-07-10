@@ -20,22 +20,8 @@
  *
  * @return 0 on successful execution.
  */
-int main()
+char conetstring (char s1[], char s2[])
 {
-    /** Arrays to store input strings. */
-    char s1[30], s2[10];
-
-    printf("Enter string 1 : ");
-    scanf("%29s", s1);
-
-    printf("Enter string 2 : ");
-    scanf("%9s", s2);
-
-    /** Example using strcat() (commented). */
-    // strcat(s1, s2);
-    // printf("Print with strcat: %s\n", s1);
-
-    /** Variables to store string lengths and loop counter. */
     int len1, len2, i;
 
     /** Calculate lengths of both strings. */
@@ -51,10 +37,21 @@ int main()
     }
 
     /** Add null terminator to complete the concatenated string. */
-    s1[len1 + len2] = '\0';
+    s1[len1 + len2] = '\0';    
+}
 
-    /** Display the concatenated string. */
-    printf("Print without using strcat : %s\n", s1);
+int main()
+{
+    char str1[100], str2[50];
+    printf("enter string 1 : ");
+    scanf("%99s", str1);
+
+    printf("enter string 2 : ");
+    scanf("%49s", str2);
+
+    conetstring(str1, str2);
+    printf("string is comcatenate : %s\n", str1);
 
     return 0;
+
 }
