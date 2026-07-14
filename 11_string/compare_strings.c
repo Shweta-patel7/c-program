@@ -20,15 +20,24 @@
  */
 void compare(char s1[], char s2[])
 {
+    printf("string 1 : %s\n", s1);
+    printf("string 2 : %s\n", s2);
     /** Flag to indicate whether the strings are different. */
-    int flag = 0;
+    int flag;
 
     /** Loop counter used for string traversal. */
     int i = 0;
 
+    if (s1[i] == '\0' && s2[i] == '\0')
+    {
+        printf("string is not same\n");
+        return;
+    }
+    
     /**
      * @brief Compare both strings character by character.
      */
+   
     while (s1[i] != '\0' && s2[i] != '\0')
     {
         if (s1[i] != s2[i])
@@ -36,9 +45,18 @@ void compare(char s1[], char s2[])
             flag = 1;
             break;
         }
+
         i++;
     }
 
+    if (s1[i] != '\0' || s2[i] !='\0')
+        {
+            flag = 1;
+        }
+
+    else
+       flag = 0;
+   
     /**
      * @brief Display the comparison result.
      */
@@ -46,7 +64,7 @@ void compare(char s1[], char s2[])
     {
         printf("String is not same\n");
     }
-    else
+    else 
     {
         printf("String is same\n");
     }

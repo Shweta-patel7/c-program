@@ -16,16 +16,12 @@
  *
  * @return 0 on successful execution
  */
-int main()
+void reverse(char *s)
 {
     int i, l = 0;
-    char s[10], temp;
+    char temp;
 
-    printf("Enter a string: ");
-    gets(s);
-
-    printf("Before reversing string: %s\n", s);
-
+    
     /**
      * @brief Calculate length of string
      */
@@ -44,7 +40,19 @@ int main()
         s[l - 1 - i] = temp;
     }
 
-    printf("Reverse of string: %s\n", s);
+    
+}
+
+int main()
+{
+    char s1[10];
+    printf("Enter a string: ");
+    gets(s1);
+
+    printf("Before reversing string: %s\n", s1);
+
+    reverse(s1);
+    printf("Reverse of string: %s\n", s1);
 
     return 0;
 }

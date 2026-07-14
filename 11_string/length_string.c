@@ -17,7 +17,7 @@
  *
  * @return 0 on successful execution.
  */
-int length(char name[])
+int length(char *name)
 {
     /** Variable to store the character count. */
     int coun = 0;
