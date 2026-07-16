@@ -1,38 +1,75 @@
+/**
+ * @file reverse_number.c
+ * @brief Program to reverse the digits of an integer.
+ *
+ * This program repeatedly accepts an integer from the user,
+ * reverses its digits, displays the reversed number, and asks
+ * whether the user wants to continue. The program terminates
+ * when the user enters 'n'.
+ */
+
 #include <stdio.h>
-int main()
+
+/**
+ * @brief Entry point of the program.
+ *
+ * The program performs the following steps:
+ * - Reads an integer from the user.
+ * - Reverses the digits of the integer.
+ * - Displays the reversed number.
+ * - Repeats until the user chooses to exit.
+ *
+ * Algorithm:
+ * - Store the input number in a temporary variable.
+ * - Extract the last digit using the modulus (%) operator.
+ * - Append the extracted digit to the reversed number.
+ * - Remove the last digit using integer division (/).
+ * - Continue until the temporary variable becomes zero.
+ *
+ * @return int Returns 0 on successful execution.
+ */
+int main(void)
 {
-    // infinity for loop
-    for ( ; ; )
-    
+    // Infinite loop
+    for (;;)
     {
-        int n, result = 0, q, rem;
+        /** Original number entered by the user */
+        int n;
+
+        /** Stores the reversed number */
+        int result = 0;
+
+        /** Temporary variable used for digit extraction */
+        int q;
+
+        /** Stores the last digit of the number */
+        int rem;
+
+        /** User choice to continue or exit */
         char a;
-        printf("enter the number :");
+
+        printf("Enter the number: ");
         scanf("%d", &n);
-    
-        
-    // q is a number which user enter for interchange
-    q = n;
-    // loop will stop when q become zero
-    while (q != 0)
-    {
-    //number is divide by 10. by divide number by 10 last number will be left as remender and it store in result 
-    rem = q % 10;
-    // result is multiply with 10 and other remender is add to it so now number is interchange
-    result = result * 10 + rem;
-    q = q / 10;
+
+        /* Copy the input number */
+        q = n;
+
+        /* Reverse the digits */
+        while (q != 0)
+        {
+            rem = q % 10;
+            result = result * 10 + rem;
+            q = q / 10;
+        }
+
+        printf("Reversed number: %d\n", result);
+
+        printf("Want to continue (y/n): ");
+        scanf(" %c", &a);
+
+        if (a == 'n' || a == 'N')
+            break;
     }
-    printf("output: %d", result);
 
-    // loop end when user enter n
-    printf("want to go on (y/n):");
-    scanf(" %c", &a);
-    if (a == 'n')
-        break;
-             
-    }
-    
-
-return 0;
-
+    return 0;
 }
