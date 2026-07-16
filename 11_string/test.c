@@ -2,33 +2,30 @@
 #include<string.h>
 void stringcom(char *s, char *bs)
 {
-    int i, j, k, ind1[50], ind2, coun = 0;
+    int i, j, k, ind1, ind2, coun = 0;
     char temp[50];
-    for (i = 0; s[i] != 0; i++)
+    k = 0;
+    for (i = 0; s[k] != 0; i++)
     {
         for (j = 0; bs[j] != '\0'; j++)
         {
-            if (s[i] == bs[j])
+            if (s[k] == bs[j])
             {
-                ind1[coun] = i;
                 coun++;
             }
         }
 
-      for (i = 0; i < coun; i++)
-            {
-                int p = ind1[i];
-                while (s[p] != '\0' && s[p] != ' ')
-                {
-                    printf("%c", s[p]);
-                    p++;
-                }
-                
-            }
-            
-        
-
+        if (coun == 1)
+        {
+            ind1 = i;
+        }
+    k++;
     }   
+
+    printf("output : %s\n", &s[ind1]);
+
+   
+
 
         if (coun > 1)
         {
