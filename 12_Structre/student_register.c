@@ -194,6 +194,7 @@ int main()
 
     for (i = 0; i < n; i++)
     {
+        printf("enter detail for %d", i + 1);
         printf("enter name : ");
         scanf("%s", s[i].name);
         printf("enter roll number : ");
