@@ -115,8 +115,6 @@ void display ()
     {
         printf("%d\t", arr[i]);
     }
-    
-    
 }
 
 /**
